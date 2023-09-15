@@ -80,6 +80,8 @@ RMSE: 0.8610
 
 This SVD++ Model has an RMSE that is close to the final RMSE we got from our best SVD model, but we weren't able to run a grid search to potentially improve the SVD++ model because it took several hours to run each SVD++ model, and a grid search performed over night never finished running. We decided to go with our best SVD model as the final model to use for the recommendation system. 
 
+### Model Comparison Graphed:
+
 ![Model_Comparison_Graphs](images/Model_Comparison_Graphs.png)
 
 ### Recommendation System
