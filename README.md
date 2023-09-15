@@ -28,3 +28,11 @@ For the baseline model we used NormalPredictor, a simple baseline algorithm that
 
 ### SVD: First Complex Model
 We chose to then use the Singular Value Decompostion model type to begin our more-complex recommendation system, because an SVD model is categorized as a latent factor model that generates recommendations using specifc user inputs (ratings) tied to specifc items (movies in this case). The SVD model performs matrix factorization without the need for additional setup other than feeding the model a dataset simply consisting of the user identifier (userId), the item identifier (movieId), and the user rating input (rating). Using several iterations of GridSearchCV, we tuned our SVD model and ended up with a final model with an RMSE of 0.85, meaning it can predict movie ratings within 0.85 points. 
+
+### Recommendation System
+
+### User Examples
+
+### Next Steps
+If we were to continue working on this project, we would like to add a content-based model to work in conjunction with our existing model that works by recommending movies to users based on the content of the movies such as genre, runtime, and themes. So rather than relying on other user’s data for comparison, this model would make recommendations based on previously highly rated content that the user watched. Also, we would like to incentive users of Netflik to rate the films they watch, because the more ratings the system has for each user, the better job it can do at predicting the next movies that they will enjoy. Finally we would like to illicit feedback from users regarding their perception of the 5-film recommendation model [ like if the user would prefer 10 options rather then 5 ] so we can fine tune our system to provide the best and easiest movie watching experience for our users. 
+
