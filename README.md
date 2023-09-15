@@ -124,3 +124,24 @@ Likely, the recommendation system noted the similarities between this users tast
 
 The Recommendation System we've built will successfully generate a list of 5 films that a user is predicted to rate highly if they were to watch based on a user-user comparison of ratings provided by existing users. Netflik could effectively deploy this model for all it's users to help conveniently narrow down the multitude of content options offered to their customers. This system is currently limited to generating only 5 recommendations at a time, however it could be easily ammended to generate any specific number of films, if needed. An additional content-based system would be a logical next step if more time was allowed, as this additional model could work in conjunction with the curernt Collaboratibve Filtering model through genre feature analysis to add complexity.
 
+#### Repository Structure Diagram
+```
+├── EDA
+│   ├── Em_EDA.ipynb
+│   ├── Final_Notebook_s.ipynb
+│   ├── Sam_EDA.ipynb
+├── data
+│   ├── README.txt
+│   ├── links.csv  
+│   ├── movies.csv
+│   ├── ratings.csv  
+│   ├── ratings_and_movies.csv   
+│   ├── tags.csv   
+│   ├── user_item_rating.csv
+│   ├── watched_df.csv      
+├── images
+├── .gitignore
+├── Final_Notebook.ipynb
+├── LICENSE
+├── README.md
+```
