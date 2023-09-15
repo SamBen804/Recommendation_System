@@ -26,8 +26,61 @@ We will begin the cross validation process by splitting our data using the train
 ### Baseline Model Placeholder
 For the baseline model we used NormalPredictor, a simple baseline algorithm that predicts ratings for items by drawing random values from a normal distribution. We then can compare the RMSE of the NormalPredictor algorithm to our tuned, more sophisticated algorithms, and if our models' RMSE and MAE are lower, we know that the models are performing better than random chance.
 
+Our Baseline Model performed with the following scores:
+RMSE: 1.4189
+MAE:  1.1326
+
 ### SVD: First Complex Model
 We chose to then use the Singular Value Decompostion model type to begin our more-complex recommendation system, because an SVD model is categorized as a latent factor model that generates recommendations using specifc user inputs (ratings) tied to specifc items (movies in this case). The SVD model performs matrix factorization without the need for additional setup other than feeding the model a dataset simply consisting of the user identifier (userId), the item identifier (movieId), and the user rating input (rating). Using several iterations of GridSearchCV, we tuned our SVD model and ended up with a final model with an RMSE of 0.85, meaning it can predict movie ratings within 0.85 points. 
+
+Our First iteration of an SVD Model performed with the following scores:
+RMSE: 0.8804
+MAE: 0.6764
+
+### SVD: Grid Search #1
+The initial model performed better than the baseline, but we wanted to tune the given hyperparameters to optimize the model and see if we can acheive an even lower RMSE. In particular, we chose to tune the following hyperparameters for these reasons:
+
+- 'n_factors': Tuning the n_factors parameter in a recommendation system adjusts the number of underlying factors or dimensions used to represent users and items, impacting the model's complexity and ability to capture nuanced preferences.
+
+- 'reg_all':Tuning the reg_all parameter in a recommendation system adjusts the regularization strength applied to all model parameters, balancing the trade-off between fitting the training data well and preventing overfitting.
+
+
+- 'n_epochs': Tuning the n_epochs parameter in a recommendation system adjusts the number of training iterations, impacting how many times the model learns from the data and potentially influencing convergence and prediction accuracy.
+
+Our First grid search resulted in the following best paraeters and RMSE score:
+{'n_factors': 100, 'reg_all': 0.06, 'n_epochs': 35}
+RMSE: 0.8693
+
+### SVD: Grid Searches # 2 - 6
+For the second round of grid-searching we will focus on the higher values for n_factors and reg_all and we will keep the n_epochs the same becasue it appears to have optimized. 
+
+The parameter lr_all represents the learning rate for the model. Tuning the lr_all parameter in an SVD recommendation model controls the learning rate during training, striking a balance between convergence speed and prediction accuracy while preventing issues like divergence and overfitting. It ensures the model adapts effectively to the dataset's characteristics and improves its robustness.
+
+We conintued running grid searches until we reached the optimal paramters as indicated by the lowest RMSE score acheived by grid search 6:
+
+Grid Search 6 Best Parameters: {'n_factors': 425, 'reg_all': 0.1, 'n_epochs': 35, 'lr_all': 0.01}
+Grid Search 6 RMSE: RMSE: 0.8554
+
+Ultimately the model resulting from grid search 6 will be used as our final model, but we continued to test other modeling options!
+
+ ### NMF: Second Complex Model
+Using an NMF (Non-Negative Matrix Factorization) model for recommendation systems offers benefits such as interpretable latent factors that can provide insights into user preferences and item characteristics. It also enforces non-negativity constraints, making it good for using when negative values don't make sense, which is the case in recommendation systems like this one where ratings are all on a scale of 1-5 stars.
+
+Our first NMF model using all default parameters resulted in a RMSE of:
+RMSE: 0.9304
+
+WE then tuend the NMF model using similar ideal paramters to that of the SVD final model, which resulted in an RMSE of:
+RMSE: 1.8088
+
+We performed additional grd searching using the NMF model, but we were not able to achieve a lower RMSE than we had already found with our SVD model, so determined that this model type would not be optimal for our purposes.
+
+### SVD++: Third Complex Model
+As this model type is very similar to the SVD model we already ran, we began with the same parameters that achieved our optimal SVD model. this resulted in a RMSE value of:
+RMSE: 0.8610
+
+This SVD++ Model has an RMSE that is close to the final RMSE we got from our best SVD model, but we weren't able to run a grid search to potentially improve the SVD++ model because it took several hours to run each SVD++ model, and a grid search performed over night never finished running. We decided to go with our best SVD model as the final model to use for the recommendation system. 
+
+![Model_Comparison_Graphs](images/Model_Comparison_Graphs.png)
 
 ### Recommendation System
 The next step in this project is to build a function that takes in a the optimal model's predictions and creates a list of all the movies that a user has not seen and then predicts the user's rating for these s. The function then produces the top 5 movies sorted by the highest predicted rating. 
