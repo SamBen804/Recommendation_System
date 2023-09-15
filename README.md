@@ -1,4 +1,6 @@
 # Netflik Film Recommendation System
+Em Jager and Sam Whitehurst
+
 ### Overview
 For many streaming services there is an overwhelming amount of content. Customers may search fruitlessly through thousands of titles only to pick a movie they ultimately don't enjoy. When the initial search begins to feel inconvenient to a customer, Netfilk Film Corp is at risk of losing that client's interest and eventually their business. We designed a predictive algorithm will learn the preferences of each user and build them a profile, which can then be compared to users with similar profiles who have watched and rated some of the same and other similar films. Using the'surprise' package from sklearn with a algorithmic technique called Collaborative Filtering, our system will make recommendations to each user for new, unwatched films based on how highly similar users have rated that film. To maximize convenience, with the customers valuable time in mind, our system is designed to deliever 5 tailor-made recommendations, thus eliminating the need to scroll through endless content to find a film they may enjoy.
 
