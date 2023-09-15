@@ -30,7 +30,24 @@ For the baseline model we used NormalPredictor, a simple baseline algorithm that
 We chose to then use the Singular Value Decompostion model type to begin our more-complex recommendation system, because an SVD model is categorized as a latent factor model that generates recommendations using specifc user inputs (ratings) tied to specifc items (movies in this case). The SVD model performs matrix factorization without the need for additional setup other than feeding the model a dataset simply consisting of the user identifier (userId), the item identifier (movieId), and the user rating input (rating). Using several iterations of GridSearchCV, we tuned our SVD model and ended up with a final model with an RMSE of 0.85, meaning it can predict movie ratings within 0.85 points. 
 
 ### Recommendation System
+The next step in this project is to build a function that takes in a the optimal model's predictions and creates a list of all the movies that a user has not seen and then predicts the user's rating for these films. The function then produces the top 5 movies sorted by the highest predicted rating. 
 
+Before the step-by-step function building process, we need to set the 'best_model' variable equal to the model with the lowest RMSE from above.
+#### Function Testing: 
+
+- The function appears to cleaning and easily take in a userId as input and then generate a list of the top 5 movies that the model predicts this user will rate the highest.
+
+- Below we've generated a few user recommendations to explore their differences and hyptohesize about why these differneces may have occured.
+-
+- #### Function Evaluation:
+
+- Each user has a unique set of 5 recommended movies. This optimal model has learned what a user prefers via their ratings and compared their compiled profile to that of similar users in order to predict a rating for an unwatched movie that our system is recommending to them.
+
+- #### Function(s) Evaluations:
+- The recommender function works well to generate a list of 5 movies that a user shoul denjoy according to the similar taste of comparable user profiles.
+- The profile function acts to help us check if the recommendations would fit for the user. For instance if a user appears to enjoy a certain type of film genre and rates those movies highly often, then we would expect to see that film genre to be in the recommendations list!
+
+- 
 ### User Examples
 
 ### Next Steps
