@@ -32,27 +32,21 @@ We chose to then use the Singular Value Decompostion model type to begin our mor
 ### Recommendation System
 The next step in this project is to build a function that takes in a the optimal model's predictions and creates a list of all the movies that a user has not seen and then predicts the user's rating for these films. The function then produces the top 5 movies sorted by the highest predicted rating. 
 
-Before the step-by-step function building process, we need to set the 'best_model' variable equal to the model with the lowest RMSE from above.
 #### Function Testing: 
 
-- The function appears to cleaning and easily take in a userId as input and then generate a list of the top 5 movies that the model predicts this user will rate the highest.
-
+The function appears to clean and easily take in a userId as input and then generate a list of the top 5 movies that the model predicts this user will rate the highest.
 - Below we've generated a few user recommendations to explore their differences and hyptohesize about why these differneces may have occured.
--
-- #### Function Evaluation:
 
-- Each user has a unique set of 5 recommended movies. This optimal model has learned what a user prefers via their ratings and compared their compiled profile to that of similar users in order to predict a rating for an unwatched movie that our system is recommending to them.
-
-- #### Function(s) Evaluations:
-- The recommender function works well to generate a list of 5 movies that a user shoul denjoy according to the similar taste of comparable user profiles.
-- The profile function acts to help us check if the recommendations would fit for the user. For instance if a user appears to enjoy a certain type of film genre and rates those movies highly often, then we would expect to see that film genre to be in the recommendations list!
-
+The recommender function works well to generate a list of 5 movies that a user should denjoy according to the similar taste of comparable user profiles.
+- The additional profile function acts to help us check if the recommendations would fit for the user. For instance if a user appears to enjoy a certain type of film genre and rates those movies highly often, then we would expect to see that film genre to be in the recommendations list!
 
 ### User Examples
 #### User Profile Example 1: 
+You can see the preferences for the user in this first example show similar genres of Action and Adventure across some of the highest rated titles.
 ![User_Pro1](https://github.com/SamBen804/Recommendation_System/assets/132294191/49e3f1a8-cd68-4d03-b7fa-f6f3a668e4aa)
 
 #### Recommendations for User Profile Example 1:
+The recommendations that our system predicted the user will rate the highest fall into the same categories as the user's previously highest rated films, which is expected.
 ![User_Recs1](https://github.com/SamBen804/Recommendation_System/assets/132294191/efdc628a-3e38-4646-9ce3-ad02154ef891)
 
 #### User Profile Example 2: 
@@ -62,6 +56,12 @@ Before the step-by-step function building process, we need to set the 'best_mode
 ![User_Recs2](https://github.com/SamBen804/Recommendation_System/assets/132294191/b480bb5c-2584-4d31-abe1-9686922b3690)
 
 
-### Next Steps
-If we were to continue working on this project, we would like to add a content-based model to work in conjunction with our existing model that works by recommending movies to users based on the content of the movies such as genre, runtime, and themes. So rather than relying on other user’s data for comparison, this model would make recommendations based on previously highly rated content that the user watched. Also, we would like to incentive users of Netflik to rate the films they watch, because the more ratings the system has for each user, the better job it can do at predicting the next movies that they will enjoy. Finally we would like to illicit feedback from users regarding their perception of the 5-film recommendation model [ like if the user would prefer 10 options rather then 5 ] so we can fine tune our system to provide the best and easiest movie watching experience for our users. 
+## Conclusions
+
+#### Nest Steps
+- Build a Content-Based model to bolster the results from the Collaborative Filtering model
+- Incentivize users to rate the films they watch
+- Illicit responses from users, regarding their perception of the 5-film recommender system
+
+The Recommendation System we've built will successfully generate a list of 5 films that a user is predicted to rate highly if they were to watch based on a user-user comparison of ratings provided by existing users. Netflik could effectively deploy this model for all it's users to help conveniently narrow down the multitude of content options offered to their customers. This system is currently limited to generating only 5 recommendations at a time, however it could be easily ammended to generate any specific number of films, if needed. An additional content-based system would be a logical next step if more time was allowed, as this additional model could work in conjunction with the curernt Collaboratibve Filtering model through genre feature analysis to add complexity.
 
