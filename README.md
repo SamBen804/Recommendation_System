@@ -32,27 +32,31 @@ We chose to then use the Singular Value Decompostion model type to begin our mor
 ### Recommendation System
 The next step in this project is to build a function that takes in a the optimal model's predictions and creates a list of all the movies that a user has not seen and then predicts the user's rating for these films. The function then produces the top 5 movies sorted by the highest predicted rating. 
 
-#### Function Testing: 
-
-The function appears to clean and easily take in a userId as input and then generate a list of the top 5 movies that the model predicts this user will rate the highest.
-- Below we've generated a few user recommendations to explore their differences and hyptohesize about why these differneces may have occured.
-
 The recommender function works well to generate a list of 5 movies that a user should denjoy according to the similar taste of comparable user profiles.
 - The additional profile function acts to help us check if the recommendations would fit for the user. For instance if a user appears to enjoy a certain type of film genre and rates those movies highly often, then we would expect to see that film genre to be in the recommendations list!
 
-### User Examples
+### User Examples to Test the Function: 
+The function appears to clean and easily take in a userId as input and then generate a list of the top 5 movies that the model predicts this user will rate the highest.
+- Below we've displayed two user profiles and generated the ecommendations for each person to explore their differences and check whether or not our system is working porperly for separate users.
+
 #### User Profile Example 1: 
 You can see the preferences for the user in this first example show similar genres of Action and Adventure across some of the highest rated titles.
+
 ![User_Pro1](https://github.com/SamBen804/Recommendation_System/assets/132294191/49e3f1a8-cd68-4d03-b7fa-f6f3a668e4aa)
 
 #### Recommendations for User Profile Example 1:
 The recommendations that our system predicted the user will rate the highest fall into the same categories as the user's previously highest rated films, which is expected.
+
 ![User_Recs1](https://github.com/SamBen804/Recommendation_System/assets/132294191/efdc628a-3e38-4646-9ce3-ad02154ef891)
 
 #### User Profile Example 2: 
+For this second example, note that the user appears to prefer older, classic films and even has highly rated a foreign title. 
+
 ![User_Pro2](https://github.com/SamBen804/Recommendation_System/assets/132294191/2d47c421-79c4-4962-bb3c-cfb359fa782d)
 
 #### Recommendations for User Profile Example 2:
+Likely, the recommendation system noted the similarities between this users taste and another user who also loves older and foreign films, as the system appears to be suggesting that this second user watch a set of 5 older films (some of which were made outside the US!). 
+
 ![User_Recs2](https://github.com/SamBen804/Recommendation_System/assets/132294191/b480bb5c-2584-4d31-abe1-9686922b3690)
 
 
