@@ -47,8 +47,11 @@ Before the step-by-step function building process, we need to set the 'best_mode
 - The recommender function works well to generate a list of 5 movies that a user shoul denjoy according to the similar taste of comparable user profiles.
 - The profile function acts to help us check if the recommendations would fit for the user. For instance if a user appears to enjoy a certain type of film genre and rates those movies highly often, then we would expect to see that film genre to be in the recommendations list!
 
-- 
+
 ### User Examples
+![User_Pro1](https://github.com/SamBen804/Recommendation_System/assets/132294191/49e3f1a8-cd68-4d03-b7fa-f6f3a668e4aa)
+
+
 
 ### Next Steps
 If we were to continue working on this project, we would like to add a content-based model to work in conjunction with our existing model that works by recommending movies to users based on the content of the movies such as genre, runtime, and themes. So rather than relying on other user’s data for comparison, this model would make recommendations based on previously highly rated content that the user watched. Also, we would like to incentive users of Netflik to rate the films they watch, because the more ratings the system has for each user, the better job it can do at predicting the next movies that they will enjoy. Finally we would like to illicit feedback from users regarding their perception of the 5-film recommendation model [ like if the user would prefer 10 options rather then 5 ] so we can fine tune our system to provide the best and easiest movie watching experience for our users. 
