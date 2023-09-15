@@ -49,8 +49,17 @@ Before the step-by-step function building process, we need to set the 'best_mode
 
 
 ### User Examples
+#### User Profile Example 1: 
 ![User_Pro1](https://github.com/SamBen804/Recommendation_System/assets/132294191/49e3f1a8-cd68-4d03-b7fa-f6f3a668e4aa)
 
+#### Recommendations for User Profile Example 1:
+![User_Recs1](https://github.com/SamBen804/Recommendation_System/assets/132294191/efdc628a-3e38-4646-9ce3-ad02154ef891)
+
+#### User Profile Example 2: 
+![User_Pro2](https://github.com/SamBen804/Recommendation_System/assets/132294191/2d47c421-79c4-4962-bb3c-cfb359fa782d)
+
+#### Recommendations for User Profile Example 2:
+![User_Recs2](https://github.com/SamBen804/Recommendation_System/assets/132294191/b480bb5c-2584-4d31-abe1-9686922b3690)
 
 
 ### Next Steps
